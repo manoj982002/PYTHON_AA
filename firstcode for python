@@ -1,0 +1,33 @@
+# Function to check if a number is prime
+def is_prime(num):
+    if num < 2:  # Prime numbers are greater than 1
+        return False
+    for i in range(2, int(num ** 0.5) + 1):  # Only check divisors up to the square root of num
+        if num % i == 0:  # If divisible by any number, it's not prime
+            return False
+    return True
+
+# Main function to find the first n prime numbers within a given range
+def find_primes_in_range(n, start, end):
+    primes = []  # List to store prime numbers
+    count = 0    # Counter for the number of primes found
+    
+    for num in range(start, end + 1):
+        if is_prime(num):  # Check if the number is prime
+            primes.append(num)  # Add prime number to the list
+            count += 1
+        if count == n:  # Stop when we've found n primes
+            break
+    
+    return primes
+
+# User input for range and number of primes
+start = int(input("Enter the start of the range: "))  # Starting number of the range
+end = int(input("Enter the end of the range: "))      # Ending number of the range
+n = int(input("Enter how many prime numbers to find: "))  # Number of primes to find
+
+# Finding the primes and displaying the result
+prime_numbers = find_primes_in_range(n, start, end)
+
+# Output the result
+print(f"The first {n} prime numbers in the range [{start}, {end}] are: {prime_numbers}")
