@@ -1,0 +1,20 @@
+# Function to check if a string or number is a palindrome
+def is_palindrome(value):
+    # Convert the value to a string (in case it's a number) and remove spaces
+    value_str = str(value).replace(" ", "").lower()  # Convert to lowercase and remove spaces
+    # Check if the string is equal to its reverse
+    return value_str == value_str[::-1]
+
+# Main function to take input from the user
+def main():
+    # Get input from the user
+    user_input = input("Enter a string or number to check if it is a palindrome: ")
+    
+    # Check if the input is a palindrome
+    if is_palindrome(user_input):
+        print(f'"{user_input}" is a palindrome.')
+    else:
+        print(f'"{user_input}" is not a palindrome.')
+
+# Call the main function
+main()
