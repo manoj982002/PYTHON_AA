@@ -1,0 +1,27 @@
+# Function to calculate the average of numbers in an array
+def calculate_average(numbers):
+    if len(numbers) == 0:  # Check if the list is empty to avoid division by zero
+        return 0
+    return sum(numbers) / len(numbers)  # Sum all numbers and divide by the number of elements
+
+# Main function to take input from the user
+def main():
+    # Get the number of elements from the user
+    n = int(input("Enter the number of elements you want to input: "))
+    
+    # Initialize an empty list to store the numbers
+    numbers = []
+    
+    # Loop to take 'n' inputs from the user
+    for i in range(n):
+        num = float(input(f"Enter number {i + 1}: "))  # Take each number input
+        numbers.append(num)  # Append the number to the list
+    
+    # Calculate the average
+    avg = calculate_average(numbers)
+    
+    # Output the average
+    print(f"The average of the entered numbers is: {avg}")
+
+# Call the main function
+main()
