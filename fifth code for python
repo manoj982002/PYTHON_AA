@@ -1,0 +1,33 @@
+# Function to count characters in a string
+def count_characters(input_string):
+    # Create a dictionary to store character counts
+    char_count = {}
+    
+    # Loop through each character in the string
+    for char in input_string:
+        # Skip spaces if you don't want to count them
+        if char != " ":
+            # If the character is already in the dictionary, increment its count
+            if char in char_count:
+                char_count[char] += 1
+            else:
+                # If it's the first occurrence of the character, set count to 1
+                char_count[char] = 1
+    
+    return char_count
+
+# Main function to take input from the user
+def main():
+    # Get input from the user
+    user_input = input("Enter a string to count characters: ")
+    
+    # Get the character count
+    character_count = count_characters(user_input)
+    
+    # Print the result
+    print("Character count:")
+    for char, count in character_count.items():
+        print(f"'{char}': {count}")
+
+# Call the main function
+main()
